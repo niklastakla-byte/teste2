@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerd was here</title>
+</head>
+<body>
+    <h1>Gerd was here</h1>
+
+    <script>
+        // --- KONFIGURASJON ---
+        const popUpUrl = "https://niklastakla-byte.github.io/Teste/"; // Lenken som skal åpnes
+        const antallPopups = 20;                     // ENDRE DETTE TALLET til det antallet du vil ha!
+
+        window.addEventListener("load", () => {
+            // Løkken tilpasser seg automatisk tallet du valgte over
+            for (let i = 0; i < antallPopups; i++) {
+                // Beregner unike koordinater for hvert vindu
+                const x = Math.floor(Math.random() * (screen.width - 800));
+                const y = Math.floor(Math.random() * (screen.height - 600));
+
+                // Åpner vinduet med et unikt nummer (_blank_0, _blank_1, osv.)
+                window.open(popUpUrl, `_blank_${i}`, `width=800,height=600,left=${x},top=${y}`);
+            }
+        });
+    </script>
+</body>
+</html>
